@@ -1,8 +1,7 @@
 import {Link, usePage} from "@inertiajs/react";
-import React, {useEffect, useRef, useState} from "react";
+import React, {useRef, useState} from "react";
 import {faCartPlus, faTrash} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import NavItem from "@/Components/Nav/NavItem.jsx";
 
 export default function CartButton() {
     const { cart, total_cost } = usePage().props;
