@@ -1,0 +1,697 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    height: 100vh;
+}
+
+body {
+    height: 100%;
+    margin: 0 auto;
+    font-size: 16px;
+    background-color: #F2F2F2;
+    overflow: auto;
+}
+
+:root{
+    --primary-color: #E5612F;
+    --text-color: #FFF;
+    --navbar-height: 5rem;
+    /*
+    1. Primary Color:
+        #E5612F (Your main orange shade)
+        2. Analogous Colors (Colors next to orange on the color wheel):
+        #E57F2F (Lighter orange, adds vibrancy)
+        #E5A62F (Golden yellow, a brighter warm tone)
+        #E5422F (Reddish-orange, adds warmth and contrast)
+        3. Complementary Color (Opposite of orange, creates contrast):
+        #2F9FE5 (Bright sky blue, complementary contrast)
+        4. Tints (Lighter shades of the primary color):
+        #F28A56 (Light orange)
+        #F5A582 (Peach)
+        #F9C6AF (Very light peach)
+        5. Shades (Darker shades of the primary color):
+        #CC4F24 (Darker orange, adds depth)
+        #B6461D (Dark burnt orange)
+        #9F3C18 (Deep brownish-orange)
+        6. Neutral Colors (To pair with your palette):
+        #333333 (Dark grey, for text or backgrounds)
+        #F2F2F2 (Light grey, for a clean, modern look)
+        #FFFFFF (White, for contrast)
+    */
+    --secondary-color: #2F9FE5;
+    --light-color: #F28A56;
+    --dark-color: #333333;
+    --dark-orange: #E5A62F;
+    --grey-color: #EEF0F1;
+    --border-radius: 39px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* --------- */
+/*Scrollbar   */
+/* --------- */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: white;
+    border-radius: 0px 10px 10px 0px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--light-color);
+    border-radius: 12px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+    border-radius: 12px;
+}
+
+
+.auth-div {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#introduction {
+    color: white;
+    font-size: 4em;
+    width: 400px;
+}
+
+.paginator {
+    margin-top: auto;
+    margin-bottom: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.paginator a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    border: 1px solid black;
+    padding: 0.4em;
+}
+
+.paginator a:hover, .paginator .pagination-link.active a {
+    font-weight: bold;
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 1.5em;
+}
+
+.input-form, .input-label, .input-error {
+    width: 100%;
+}
+
+.input-label {
+    font-size: 1.2em;
+}
+
+.input-form {
+    box-shadow: 1px 1px 1px #E5612F;
+    border-radius: 5px;
+}
+
+.input-error {
+    color: #ff5959;
+    font-size: 0.8em;
+    margin-left: 1em;
+}
+
+/**************** CART **************/
+.cart-dropdown {
+    position: absolute;
+    white-space: nowrap;
+    padding: 1.2em;
+    background-color: #fff;
+    color: #000;
+    border-radius: 5px;
+    width: 300px;
+    box-shadow: 0px 16px 32px rgba(0,0,0,0.2);
+    top: 180%;
+    left: -250%;
+}
+
+.cart-dropdown::before {
+    content: "";
+    position: absolute;
+    top: -20px;  /* Adjust this value to position the arrow */
+    left: 35%;  /* Centers the arrow horizontally */
+    transform: translateX(100%);  /* Adjusts position to align with the center */
+    border-width: 11px;  /* Size of the arrow */
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;  /* Creates a downward-facing arrow */
+}
+
+/*.cart-dropdown li {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}*/
+
+.cart-dropdown-name-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 4em;
+    overflow: hidden;
+}
+
+.cart-dropdown-name-wrapper :nth-child(2){
+    font-size: 0.6em;
+}
+
+.cart-dropdown-quantity {
+    display: flex;
+    width: 2em;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+/*************** NAVBAR ************/
+.navbar-container {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 1em;
+    height: var(--navbar-height);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+
+.nav-item-icon, .nav-item-trigger{
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.navbar > .nav-container:first-child {
+    width: 20%;
+}
+
+.navbar > .nav-container:nth-child(2) {
+    width: 60%;
+}
+
+.navbar > .nav-container:last-child {
+    width: 20%;
+    gap: 0.8em;
+}
+
+.nav-item:hover {
+    color: var(--dark-color);
+}
+
+.nav-item[aria-current="page"] {
+    color: var(--dark-color);
+}
+
+.nav-item, .nav-item button {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.logo-container {
+    width: 100%;
+}
+
+.link-nav-container{
+    justify-content: flex-start;
+    gap: 3rem;
+}
+
+.nav-item-dropdown {
+    background-color: var(--light-color);
+    position: absolute;
+    top: 100%;
+    padding: 1em;
+    white-space: nowrap;
+    left: 0;
+    color: var(--text-color);
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5em;
+    z-index: 50;
+    width: 10em;
+}
+
+.nav-item-dropdown :hover {
+    color: var(--dark-color);
+}
+
+#nav-dropdown-close {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 40;
+}
+
+
+/****************** DASHBOARD *********************/
+
+
+.dashboard {
+    width: 100%;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+    overflow-y: auto;
+}
+
+.admin-dashboard-item {
+    background-color: var(--grey-color);
+    border-radius: var(--border-radius);
+    height: 8em;
+    width: 8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    overflow: hidden;
+    transition: background 0.3s ease;
+    position: relative;
+}
+
+.admin-dashboard-item:hover > .admin-dashboard-item-content{
+    filter: blur(2px); /* Blur effect */
+}
+
+.admin-dashboard-item-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.admin-dashboard-item-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 2;
+    background-color: rgba(229, 97, 47, 0.7);
+    visibility: hidden;
+    opacity: 0;
+    gap: 1em;
+}
+
+.admin-dashboard-item:hover .admin-dashboard-item-overlay{
+    visibility: visible;
+    opacity: 1;
+}
+
+.admin-dashboard-item-overlay a {
+    background-color: #F2F2F2;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    padding: 1em;
+    font-size: 0.6em;
+    width: 50%;
+    text-align: center;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.admin-dashboard-item-overlay a:hover {
+    background-color: var(--dark-color);
+    color: #fff;
+}
+
+.admin-dashboard-item.order a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.admin-dashboard-item.order a:hover {
+    background-color: var(--light-color);
+    color: #fff;
+}
+
+/************************ FORM *************************************/
+#image-form {
+    max-width: 30em;
+    height: auto;
+}
+.pizza-form {
+    position: relative;
+}
+
+.pizza-form form {
+    width: 25em;
+    height: 30em;
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    box-shadow: 2px 2px 4px #E5612F;
+}
+
+.pizza-form h1 {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-bottom: auto;
+}
+
+#pizza-button-form {
+    margin-top: auto;
+    background-color: var(--dark-color);
+    color: var(--text-color);
+    border-radius: 5px;
+    padding: 1em 2em 1em 2em;
+    transition: background-color 0.3s ease;
+}
+
+#pizza-button-form:hover {
+    background-color: var(--light-color);
+}
+
+/********************* PIZZA LIST *****************************************/
+.pizzas-list-container {
+    background-color: white;
+    height: 34em;
+    width: 56em;
+    border-radius: 10px;
+    overflow: auto;
+    padding: 1em;
+}
+
+
+.pizza-list-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    padding: 1em;
+    gap: 1em;
+}
+
+.pizza-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex: 1;
+    gap: 5em;
+}
+
+.pizza-list-item{
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    padding: 1em;
+    display: flex;
+    margin-bottom: 1em;
+}
+
+.pizza-list-image-container{
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+}
+.pizza-list-image-container img{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.pizza-list-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-grow: 1;
+    margin-left: 1em;
+}
+
+.pizza-list-links{
+    width: 100px;
+}
+
+.pizza-list-name {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-top: -10px;
+}
+
+.pizza-list-description {
+    font-size: 0.9em;
+    width: 100%;
+    height: 100%;
+}
+
+.pizza-list-price {
+    font-weight: bold;
+    width: 100%;
+    font-size: 1.5em;
+}
+
+.pizza-list-links .add-to-cart-button {
+    padding: 0.5em;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #2F9FE5;
+    border-radius: 15px;
+    width: 100%;
+}
+
+
+/******************** PIZZA CARD ********************************/
+.pizza-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1em;
+    height: 25em;
+    width: 20em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.pizza-card-image-container {
+    background-color: var(--dark-color);
+    width: 100%;
+    height: 35%;
+}
+
+.pizza-card-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 55%;
+}
+
+.pizza-card-name {
+    font-size: 2em;
+    width: 100%;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.pizza-card-description {
+    font-size: 1.2em;
+    width: 100%;
+    height: 100%;
+}
+
+.pizza-card-price {
+    font-weight: bold;
+    width: 100%;
+    text-align: right;
+    font-size: 1.5em;
+}
+
+.pizza-card-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    width: 100%;
+    gap: 1em;
+}
+
+.pizza-card-links a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.pizza-card-links .add-to-cart-button {
+    padding: 1em;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #2F9FE5;
+    border-radius: 15px;
+}
+
+.pizza-card-links button {
+    color: red;
+    font-size: 1em;
+}
+
+/************** USER INDEX ********************/
+.user-index-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 1em;
+    padding: 1em;
+}
+
+/*table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+thead {
+    background-color: #2F9FE5;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+*/
+
+.index-edit {
+    color: var(--secondary-color);
+}
+
+.index-delete {
+    color: red;
+}
+
+
+/**********************USER FORM ************************/
+.user-form {
+    width: 30em;
+    background-color: white;
+    padding: 2em;
+    border-radius: var(--border-radius);
+}
+
+#user-button {
+    width: 100%;
+    text-align: center;
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    padding: 1em;
+    transition: background-color 0.3s ease;
+}
+
+#user-button:hover {
+    background-color: var(--light-color);
+    color: #fff;
+}
