@@ -69,16 +69,24 @@ export default function OrderIndex({orders, dateOptions}){
                         </tr>
                         </thead>
                         <tbody>
-                        {displayed_data.map((order) => (
-                            <tr className={`hover:bg-orange-300 hover:cursor-pointer ${selectedOrder?.id === order.id ? 'bg-orange-300' : ''}`}
-                                key={order.id}
-                                onClick={() => orderClickHandler(order)}
-                            >
-                                <td className={"border text-left px-4 py-3"}>{order.id}</td>
-                                <td className={"border text-left px-4 py-3"}>{order.status}</td>
-                                <td className={"border text-left px-4 py-3"}>{order.total}€</td>
+                        {displayed_data.length > 0 ?
+                            displayed_data.map((order) => (
+                                <tr className={`hover:bg-orange-300 hover:cursor-pointer ${selectedOrder?.id === order.id ? 'bg-orange-300' : ''}`}
+                                    key={order.id}
+                                    onClick={() => orderClickHandler(order)}
+                                >
+                                    <td className={"border text-left px-4 py-3"}>{order.id}</td>
+                                    <td className={"border text-left px-4 py-3"}>{order.status}</td>
+                                    <td className={"border text-left px-4 py-3"}>{order.total}€</td>
+                                </tr>
+                            ))
+                            :
+                            <tr>
+                                <td colSpan="3" className="text-center py-4 text-gray-400">
+                                    <p>No order</p>
+                                </td>
                             </tr>
-                        ))}
+                        }
                         </tbody>
                     </table>
                     <Paginator numberOfPage={numberOfPage} indexPaginator={indexPaginator}

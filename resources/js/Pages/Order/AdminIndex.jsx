@@ -33,3 +33,8 @@ export default function AdminIndex({orders}){
         <OrderIndex orders={filteredByDateOrder} dateOptions={dateOptions}/>
     );
 }
+
+const formatDate = (dateString) => {
+    // Remove the 'T' and 'Z' and slice the fractional seconds
+    return dateString.replace('T', ' ').replace('Z', '').split('.')[0];
+};

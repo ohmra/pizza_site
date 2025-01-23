@@ -67,7 +67,7 @@ export default function CartButton() {
 
 
                 ) : (
-                    <p style={{padding: '10px'}}>Your cart is empty</p>
+                    <p className={"p-[10px] text-gray-400"}>Your cart is empty</p>
                 )}
                 <Link href={route('cart.show')} className={"text-sm text-blue-500"}>Show cart</Link>
             </div>
