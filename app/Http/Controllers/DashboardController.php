@@ -10,6 +10,12 @@ use Inertia\Inertia;
 
 class DashboardController extends Controller
 {
+    public function root(Request $request){
+        if(auth()->check() && auth()->user()->type == "user")
+            return to_route('home');
+
+        return to_route('dashboard');
+    }
     public function index(Request $request){
         if($request->user()->type == "admin"){
             $pizzas = Pizza::all();
