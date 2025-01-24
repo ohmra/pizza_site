@@ -11,7 +11,7 @@ class PizzaController extends Controller
 {
 
     public function index(){
-        if(auth()->user()->type !== 'user'){
+        if(auth()->user()?->type !== 'user'){
             abort(403, "unauthorized action.");
         }
         $pizzas = Pizza::all();
