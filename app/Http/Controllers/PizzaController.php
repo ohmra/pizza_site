@@ -11,7 +11,9 @@ class PizzaController extends Controller
 {
 
     public function index(){
-        //$pizzas = Pizza::paginate(9)->onEachSide(2);
+        if(auth()->user()->type !== 'user'){
+            abort(403, "unauthorized action.");
+        }
         $pizzas = Pizza::all();
         return Inertia::render('Home', compact('pizzas'));
     }

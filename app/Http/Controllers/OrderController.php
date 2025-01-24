@@ -4,21 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\Pizza;
-use DateTime;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Inertia\Inertia;
 use Inertia\Response;
 
 class OrderController extends Controller
 {
     public function index(Request $request) : Response {
+        Gate::authorize('view', Order::class);
         $user = $request->user();
         $orders = $user->orders()->with('pizzas')->orderBy('created_at', 'desc')->get();
         return Inertia::render('Order/Index', compact('orders'));
     }
 
     public function execute(Request $request){
+        Gate::authorize('make', Order::class);
         $cart = $request->session()->get('cart');
         if(!empty($cart)){
             $user = $request->user();
@@ -45,6 +47,7 @@ class OrderController extends Controller
     }
 
     public function change_status(Request $request, $id) {
+        Gate::authorize('update', Order::class);
         try{
             $all_status = ['sent', 'preparing', 'ready', 'picked out'];
             if(in_array($request->input('status'), $all_status)){
@@ -59,6 +62,7 @@ class OrderController extends Controller
     }
 
     public function next_status(Request $request) {
+        Gate::authorize('update', Order::class);
         try{
             $order = Order::findOrFail($request->id);
             switch($order->status){
