@@ -17,6 +17,7 @@ return Application::configure(basePath: dirname(__DIR__))
         ])->alias([
             'is_admin' => \App\Http\Middleware\EnsureIsAdmin::class,
             'is_user' => \App\Http\Middleware\EnsureIsUser::class,
+            'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         ]);
 
         //
