@@ -5,11 +5,13 @@ import {useState} from "react";
 import PizzaListContainer from "@/Components/Pizza/PizzaListContainer.jsx";
 import { motion } from "framer-motion";
 import AdminIndex from "@/Pages/Order/AdminIndex.jsx";
+import {Head} from "@inertiajs/react";
 
 export default function AdminDashboard({pizzas, users, orders}) {
     const [itemSelected, setItemSelected] = useState("overview");
     return (
         <Authenticated>
+            <Head title="Dashboard" />
             <AdminDashboardLayout onSelectedItem={setItemSelected}>
                 <motion.div
                     key={itemSelected}

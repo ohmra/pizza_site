@@ -1,4 +1,4 @@
-import {Link, usePage} from "@inertiajs/react";
+import {Head, Link, usePage} from "@inertiajs/react";
 import React from "react";
 import Authenticated from "@/Layouts/AuthenticatedLayout.jsx";
 import {faTrash} from "@fortawesome/free-solid-svg-icons";
@@ -10,6 +10,7 @@ export default function Cart(){
     const cart_length = Object.keys(cart).length;
     return (
         <Authenticated>
+            <Head title="My Cart" />
             <div className={"flex w-full h-full items-center justify-center"}>
                 <motion.div className={`w-[400px] h-[500px] bg-white rounded-md p-10`}
                     initial={{opacity: 0}}
