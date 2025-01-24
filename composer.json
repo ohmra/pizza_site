@@ -35,6 +35,9 @@
         }
     },
     "scripts": {
+
+        "vercel-build": "composer install --optimize-autoloader --no-dev && npm install && npm run prod",
+
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
