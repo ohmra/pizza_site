@@ -42,7 +42,8 @@ export default function PizzaListContainer({pizzas}) {
 
     return (
         <>
-            <div className={`pizzas-list-container`} ref={pizzaListContainerRef}>
+            <div className={`bg-white h-[30em] w-[50em] rounded-[10px] overflow-auto p-3`}
+                 ref={pizzaListContainerRef}>
                 {
                     admin &&
                     <button className={"w-52 bg-green-300 mb-1 rounded-lg"}

@@ -13,7 +13,7 @@ export default function PizzaListItem({pizza, editHandler=undefined}) {
         destroy(route('pizza.delete', [pizzaId]));
     }
     return (
-        <div className="pizza-list-item">
+        <div className="bg-[#F3F3F3] rounded-[10px] p-3 flex mb-3 w-full">
             <div className="pizza-list-image-container">
                 <img src="./images/pizza.jpg" alt="pizza image"/>
             </div>

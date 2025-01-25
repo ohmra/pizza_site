@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 html {
     height: 100vh;
@@ -17,7 +22,7 @@ body {
 :root{
     --primary-color: #E5612F;
     --text-color: #FFF;
-    --navbar-height: 5rem;
+    --navbar-height: 5em;
     /*
     1. Primary Color:
         #E5612F (Your main orange shade)
@@ -99,6 +104,7 @@ a {
     display: flex;
     height: 100vh;
     flex-direction: column;
+    overflow: hidden;
 }
 
 main {
@@ -118,8 +124,8 @@ main {
 
 #introduction {
     color: white;
-    font-size: 4em;
-    width: 400px;
+    font-size: 3em;
+    width: 5em;
 }
 
 .paginator {
@@ -463,45 +469,10 @@ main {
 }
 
 /********************* PIZZA LIST *****************************************/
-.pizzas-list-container {
-    background-color: white;
-    height: 34em;
-    width: 56em;
-    border-radius: 10px;
-    overflow: auto;
-    padding: 1em;
-}
-
-
-.pizza-list-container {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    padding: 1em;
-    gap: 1em;
-}
-
-.pizza-list {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex: 1;
-    gap: 5em;
-}
-
-.pizza-list-item{
-    background-color: #F3F3F3;
-    border-radius: 10px;
-    padding: 1em;
-    display: flex;
-    margin-bottom: 1em;
-}
 
 .pizza-list-image-container{
-    height: 100px;
-    width: 100px;
+    height: 5em;
+    width: 5em;
     overflow: hidden;
 }
 .pizza-list-image-container img{
@@ -516,12 +487,13 @@ main {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    flex-grow: 1;
+    width: 30em;
     margin-left: 1em;
 }
 
 .pizza-list-links{
-    width: 100px;
+    width: 7em;
+    margin-left: auto;
 }
 
 .pizza-list-name {
@@ -553,83 +525,6 @@ main {
     width: 100%;
 }
 
-
-/******************** PIZZA CARD ********************************/
-.pizza-card {
-    background-color: white;
-    border-radius: 10px;
-    padding: 1em;
-    height: 25em;
-    width: 20em;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
-
-.pizza-card-image-container {
-    background-color: var(--dark-color);
-    width: 100%;
-    height: 35%;
-}
-
-.pizza-card-info {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    height: 55%;
-}
-
-.pizza-card-name {
-    font-size: 2em;
-    width: 100%;
-    color: var(--primary-color);
-    font-weight: bold;
-}
-
-.pizza-card-description {
-    font-size: 1.2em;
-    width: 100%;
-    height: 100%;
-}
-
-.pizza-card-price {
-    font-weight: bold;
-    width: 100%;
-    text-align: right;
-    font-size: 1.5em;
-}
-
-.pizza-card-links {
-    display: flex;
-    justify-content: flex-end;
-    align-items: baseline;
-    width: 100%;
-    gap: 1em;
-}
-
-.pizza-card-links a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    font-size: 1em;
-}
-
-.pizza-card-links .add-to-cart-button {
-    padding: 1em;
-    font-size: 1em;
-    font-weight: bold;
-    color: #fff;
-    background-color: #2F9FE5;
-    border-radius: 15px;
-}
-
-.pizza-card-links button {
-    color: red;
-    font-size: 1em;
-}
-
 /************** USER INDEX ********************/
 .user-index-container {
     display: flex;
@@ -639,31 +534,6 @@ main {
     gap: 1em;
     padding: 1em;
 }
-
-/*table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
-
-thead {
-    background-color: #2F9FE5;
-}
-
-th, td {
-    padding: 12px 15px;
-    text-align: left;
-    border: 1px solid #ddd;
-}
-
-tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-tbody tr:hover {
-    background-color: #f1f1f1;
-}
-*/
 
 .index-edit {
     color: var(--secondary-color);

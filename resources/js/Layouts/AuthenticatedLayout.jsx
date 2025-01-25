@@ -22,7 +22,7 @@ export default function Authenticated({ header, children }) {
         }
     }, [flash]);
     return (
-        <div className="auth-div">
+        <div className="auth-div text-[6px] sm:text-[8px] md:text-[10px] lg:text-[14px]">
             <header>
                 <div className="navbar-container">
                     <NavBar>
