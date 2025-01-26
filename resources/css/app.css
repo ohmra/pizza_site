@@ -550,7 +550,7 @@ main {
     width: 30em;
     background-color: white;
     padding: 2em;
-    border-radius: var(--border-radius);
+    border-radius: 1em;
 }
 
 #user-button {
