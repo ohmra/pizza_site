@@ -39,7 +39,7 @@ export default function OrderIndex({orders, dateOptions}){
     return (
         <div className={`w-full h-full flex flex-row items-center justify-around ${userType === "admin" ? 'gap-2' : ''}`}>
             <motion.div
-                className={`p-10 bg-white rounded-tl-2xl rounded-bl-2xl rounded-tr-md rounded-br-md h-[500px] w-[800px] overflow-auto`}
+                className={`p-10 bg-white rounded-tl-2xl rounded-bl-2xl rounded-tr-md rounded-br-md h-[36em] w-[50em] overflow-auto`}
                 initial={{opacity: 0, x: -150}}
                 animate={{opacity: 1, x: 0}}
                 transition={{duration: 1}}

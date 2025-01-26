@@ -22,8 +22,10 @@ export default function OrderDetail({selectedOrder, fade}){
     }
     return (
         <div
-            className={`w-[400px] h-[500px] bg-white/75 rounded-md p-10 transition-opacity duration-300 ease-in-out ${fade ? "opacity-0" : "opacity-100"}`}>
-            <div className={"text-center font-bold text-3xl"}>Order detail</div>
+            className={`w-[25em] h-[36em] bg-white/75 rounded-md p-[2.5em]
+                        flex flex-col
+                        transition-opacity duration-300 ease-in-out ${fade ? "opacity-0" : "opacity-100"}`}>
+            <div className={"text-center font-bold text-[2em]"}>Order detail</div>
             <hr/>
             {selectedOrder === null
                 ?
@@ -35,8 +37,8 @@ export default function OrderDetail({selectedOrder, fade}){
                             selectedOrder.pizzas.map((pizza, index) => (
                                 <li key={index} className={"flex flex-row w-full gap-2 items-center"}>
                                     <div className={"w-20 overflow-hidden"}>
-                                        <div className={"text-lg"}>{pizza.name}</div>
-                                        <div className={"text-xs"}>{pizza.price}€</div>
+                                        <div className={"text-[1.5em]"}>{pizza.name}</div>
+                                        <div className={"text-[1em]"}>{pizza.price}€</div>
                                     </div>
                                     <div>x{pizza.pivot.qty}</div>
                                     <div
@@ -46,7 +48,7 @@ export default function OrderDetail({selectedOrder, fade}){
                             ))
                         }
                     </ul>
-                    <hr/>
+                    <hr className={"mt-auto"}/>
                     <div>Total : {selectedOrder.total}€</div>
                     <div>Date : {formatDate(selectedOrder.created_at)}</div>
                     {userType === 'admin' && <div>Status : {selectedOrder.status} </div>}

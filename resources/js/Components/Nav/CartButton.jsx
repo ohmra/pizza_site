@@ -60,15 +60,15 @@ export default function CartButton() {
                             </ul>
                         </li>
                         <hr/>
-                        <li className={"text-right text-red-500 text-xs"}><Link href={route('cart.clear')} method="post" as="button">Clear cart</Link></li>
+                        <li className={"text-right text-red-500 text-[1em]"}><Link href={route('cart.clear')} method="post" as="button">Clear cart</Link></li>
                         <li>Total cost : <span className={"font-bold"}>{Number(total_cost).toFixed(2)}€</span></li>
                     </ul>
 
 
                 ) : (
-                    <p className={"p-[10px] text-gray-400"}>Your cart is empty</p>
+                    <p className={"p-[1em] text-[0.7em] text-gray-400"}>Your cart is empty</p>
                 )}
-                <Link href={route('cart.show')} className={"text-sm text-blue-500"}>Show cart</Link>
+                <Link href={route('cart.show')} className={"text-[1em] text-blue-500"}>Show cart</Link>
             </div>
 
         </div>

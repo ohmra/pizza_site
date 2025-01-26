@@ -8,7 +8,8 @@ export default function SearchBar({search, setSearch, setIndexPaginator = undefi
     return (
         <input type="text" value={search} placeholder="Search..."
         onChange={handleSearch}
-        className={`rounded-xl m-2 text-gray-500`+className}
+        className={`rounded-xl mb-[0.8em] text-gray-500 h-[2em] w-[10em] text-[1.5em]
+                    max-sm:w-full`+className}
         />
     )
 }
