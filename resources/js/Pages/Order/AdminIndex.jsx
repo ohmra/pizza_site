@@ -30,7 +30,7 @@ export default function AdminIndex({orders}){
         handleChangeDate
     }
     return (
-        <OrderIndex orders={filteredByDateOrder} dateOptions={dateOptions}/>
+        <OrderIndex className={"text-[0.8em]"} orders={filteredByDateOrder} dateOptions={dateOptions}/>
     );
 }
 

@@ -1,6 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    html {
+        @apply text-[6px] sm:text-[8px] md:text-[10px] lg:text-[12px] xl:text-[16px];
+    }
+}
+
 *{
     margin: 0;
     padding: 0;

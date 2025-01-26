@@ -13,9 +13,9 @@ export default function AdminDashboardLayout({children, onSelectedItem}) {
     }
     return (
         <div className={"w-full h-full flex items-center justify-between"}>
-            <div className={"bg-white w-64 h-full border-r"}>
-                <div className={"h-20  font-bold text-4xl text-gray-400 p-4"}>{user.name}</div>
-                <hr className={"mb-10"}/>
+            <div className={"bg-white w-[18em] h-full border-r"}>
+                <div className={"h-20  font-bold text-[2em] text-gray-400 p-4"}>{user.name}</div>
+                <hr className={"mb-[2.5em]"}/>
                 {/*TODO: OVERVIEW*/}
                 <DashboardItem handler={handleClickItem} id={"overview"} >Overview</DashboardItem>
 

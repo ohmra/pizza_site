@@ -5,7 +5,7 @@ import {usePage} from "@inertiajs/react";
 import usePaginator from "@/Hooks/usePaginator.js";
 import Paginator from "@/Components/Paginator.jsx";
 
-export default function OrderIndex({orders, dateOptions}){
+export default function OrderIndex({className, orders, dateOptions}){
     const {user} = usePage().props.auth;
     const userType = user.type;
 
@@ -37,7 +37,7 @@ export default function OrderIndex({orders, dateOptions}){
     });
 
     return (
-        <div className={`w-full h-full flex flex-row items-center justify-around ${userType === "admin" ? 'gap-2' : ''}`}>
+        <div className={`w-full h-full flex flex-row items-center justify-around ${userType === "admin" ? 'gap-4' : ''} ${className}`}>
             <motion.div
                 className={`p-10 bg-white rounded-tl-2xl rounded-bl-2xl rounded-tr-md rounded-br-md h-[36em] w-[50em] overflow-auto`}
                 initial={{opacity: 0, x: -150}}
@@ -54,7 +54,7 @@ export default function OrderIndex({orders, dateOptions}){
 
                 {userType === 'admin' && <>
                     <div>
-                        <input type="date" value={selectedDate} onChange={handleChangeDate}/>
+                        <input className={"text-xs"} type="date" value={selectedDate} onChange={handleChangeDate}/>
                     </div>
                     <div>Earnings : {earnings}€</div>
                 </>}
