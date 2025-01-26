@@ -40,7 +40,7 @@ export default function PizzaModalForm({action, pizza, handleModalClose}){
                             duration={100}
                 >
                     <form onSubmit={submit}>
-                        <button type={"button"} className={"absolute right-5 top-3 text-2xl"} onClick={() => handleModalClose()}>
+                        <button type={"button"} className={"absolute right-8 top-6 text-2xl"} onClick={() => handleModalClose()}>
                             <FontAwesomeIcon icon={faCircleXmark}/></button>
                         <h1>Pizza Creation</h1>
                         <div className="input-wrapper">
