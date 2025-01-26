@@ -81,10 +81,10 @@ export default function UserList({users}) {
 
     return (
         <div className={"bg-white w-[56em] h-[34em] p-10 overflow: auto"} ref={userListContainerRef}>
-            <button className={"w-52 bg-green-300 mb-1 rounded-lg"} onClick={() => handleUserModalClick(null, "create")}>ADD A USER</button>
+            <button className={"w-[12em] mr-[1em] p-[0.3em] bg-green-300 mb-1 rounded-lg"} onClick={() => handleUserModalClick(null, "create")}>ADD A USER</button>
             <SearchBar search={search} setSearch={setSearch} setIndexPaginator={setIndexPaginator} />
             <div className={`transition-opacity duration-300 ease-in-out ${animation ? 'opacity-0' : 'opacity-100'}`}>
-                <table className={`table-auto w-full border-collapse border border-gray-200`}>
+                <table className={`table-auto w-full border-collapse border border-gray-200 text-[0.9rem]`}>
                     <thead className="bg-gray-200">
                     <tr>
                         <th className={"border text-left px-4 py-3"}>id</th>
