@@ -39,8 +39,8 @@ export default function PizzaListItem({pizza, editHandler=undefined}) {
                             <button disabled={processing}
                                     type="submit"><FontAwesomeIcon icon={faTrash}/></button>
                         </form>
-                        <div className="text-[10px] mt-auto">
-                            last updated : {formatDate(pizza.updated_at)}
+                        <div className="text-[0.6em] mt-auto">
+                            last updated : <br/>{formatDate(pizza.updated_at)}
                         </div>
                     </div>
                 }

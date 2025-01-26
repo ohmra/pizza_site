@@ -46,7 +46,7 @@ export default function PizzaListContainer({pizzas}) {
                  ref={pizzaListContainerRef}>
                 {
                     admin &&
-                    <button className={"w-52 bg-green-300 mb-1 rounded-lg"}
+                    <button className={"w-[12em] mr-[1em] p-[0.3em] bg-green-300 mb-1 rounded-lg"}
                             onClick={() => modalHandler(null, "create")}>ADD A PIZZA
                     </button>
                 }
