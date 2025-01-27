@@ -80,7 +80,7 @@ export default function UserList({users}) {
     });
 
     return (
-        <div className={"bg-white w-[56em] h-[34em] p-10 overflow: auto"} ref={userListContainerRef}>
+        <div className={"bg-white w-[44em] mt-4 h-[46em] sm:w-[56em] sm:h-[34em] p-10 overflow: auto"} ref={userListContainerRef}>
             <button className={"w-[12em] mr-[1em] p-[0.3em] bg-green-300 mb-1 rounded-lg"} onClick={() => handleUserModalClick(null, "create")}>ADD A USER</button>
             <SearchBar search={search} setSearch={setSearch} setIndexPaginator={setIndexPaginator} />
             <div className={`transition-opacity duration-300 ease-in-out ${animation ? 'opacity-0' : 'opacity-100'}`}>
