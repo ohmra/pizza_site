@@ -12,7 +12,7 @@ export default function Cart(){
         <Authenticated>
             <Head title="My Cart" />
             <div className={"flex w-full h-full items-center justify-center"}>
-                <motion.div className={`w-[400px] h-[500px] bg-white rounded-md p-10`}
+                <motion.div className={`w-[25em] h-[32em] bg-white rounded-md p-10`}
                     initial={{opacity: 0}}
                     animate={{opacity: 1}}
                     transition={{duration: 1}}

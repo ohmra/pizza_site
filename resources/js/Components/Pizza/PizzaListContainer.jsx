@@ -42,7 +42,7 @@ export default function PizzaListContainer({pizzas}) {
 
     return (
         <>
-            <div className={`bg-white h-[30em] w-[50em] rounded-[10px] overflow-auto p-3`}
+            <div className={`bg-white h-[60em] max-sm:mt-20 sm:h-[30em] w-[50em] rounded-[10px] overflow-auto p-3`}
                  ref={pizzaListContainerRef}>
                 {
                     admin &&
