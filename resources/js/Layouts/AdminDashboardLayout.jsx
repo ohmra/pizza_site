@@ -19,8 +19,8 @@ export default function AdminDashboardLayout({children, onSelectedItem}) {
         setMenuOpen(!menuOpen);
     }
     return (
-        <div className={"w-full h-full flex flex-col md:items-center justify-between md:flex-row"}>
-            <div className={"bg-white w-[18em] h-full border-r hidden md:block"}>
+        <div className={"w-full h-full flex flex-col lg:items-center justify-between lg:flex-row"}>
+            <div className={"bg-white w-[18em] h-full border-r hidden lg:block"}>
                 <div className={"h-20  font-bold text-[2em] text-gray-400 p-4"}>{user.name}</div>
                 <hr className={"mb-[2.5em]"}/>
                 {/*TODO: OVERVIEW*/}
@@ -31,7 +31,7 @@ export default function AdminDashboardLayout({children, onSelectedItem}) {
                 <DashboardItem handler={handleClickItem} id={"order"} icon={<FontAwesomeIcon icon={faCartShopping} />}>Orders</DashboardItem>
             </div>
             {/* Dropdown button for small screens */}
-            <div className="md:hidden w-full bg-gray-100 p-4">
+            <div className="lg:hidden w-full p-4">
                 <button
                     className="bg-blue-500 text-white p-2 rounded-md w-full"
                     onClick={toggleMenu}>
@@ -46,7 +46,7 @@ export default function AdminDashboardLayout({children, onSelectedItem}) {
                     </div>
                 )}
             </div>
-            <div className={"flex-grow h-full flex md:items-center justify-center relative"}>
+            <div className={"flex-grow h-full flex max-lg:mt-2 lg:items-center justify-center relative"}>
                 {children}
             </div>
         </div>

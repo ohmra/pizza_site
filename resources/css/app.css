@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
+/*@layer base {
     html {
-        @apply text-[8px] sm:text-[8px] md:text-[10px] lg:text-[12px] xl:text-[16px];
+        @apply text-[10px] sm:text-[12px] md:text-[14px] lg:text-[14px] xl:text-[16px];
     }
 }
-
+*/
 *{
     margin: 0;
     padding: 0;
@@ -196,7 +196,7 @@ main {
     content: "";
     position: absolute;
     top: -1.7em;  /* Adjust this value to position the arrow */
-    right: 45%;  /* Centers the arrow horizontally */
+    right: 36%;  /* Centers the arrow horizontally */
     transform: translateX(100%);  /* Adjusts position to align with the center */
     border-width: 1em;  /* Size of the arrow */
     border-style: solid;
@@ -249,19 +249,13 @@ main {
     justify-content: center;
 }
 
-
-.navbar > .nav-container:first-child {
-    width: 10em;
-}
-
 .navbar > .nav-container:nth-child(2) {
-    width: 60%;
     margin-left: 1em;
 }
 
 .navbar > .nav-container:last-child {
-    width: 20%;
     gap: 0.8em;
+    margin-left: auto;
 }
 
 .nav-item:hover {
@@ -288,13 +282,9 @@ main {
     height: 100%;
 }
 
-.logo-container {
-    width: 100%;
-}
-
 .link-nav-container{
     justify-content: flex-start;
-    gap: 3rem;
+    gap: 1rem;
 }
 
 .nav-item-dropdown {

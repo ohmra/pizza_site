@@ -9,15 +9,15 @@ export default function Home({pizzas}){
         <Head title="Home" />
             <Authenticated>
                 <div className={`w-full h-full flex items-center flex-col overflow-x-hidden
-                                sm:flex-row sm:justify-around`}>
-                    <motion.aside className={"text-white w-[50%] text-[4em] sm:text-[3em] sm:w-[7em]"}
+                                lg:flex-row sm:justify-around`}>
+                    <motion.aside className={"text-white w-[50%] text-[2em] sm:text-[2em] md:text-[3em] sm:w-[7em]"}
                               initial={{opacity: 0, x: -150}}
                               animate={{opacity: 1, x: 0}}
                               transition={{duration: 1}}
                     >
                         The best pizza of town since 1994!
                     </motion.aside>
-                    <motion.div
+                    <motion.div className={"max-md:w-full"}
                         initial={{opacity: 0, x: 150}}
                         animate={{opacity: 1, x: 0}}
                         transition={{duration: 1}}>

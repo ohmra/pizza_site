@@ -19,6 +19,7 @@ export default function AdminDashboard({pizzas, users, orders}) {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 1 }}
+                    className={"max-md:w-full"}
                 >
                     {itemSelected === "overview" && <Overview />}
                     {itemSelected === "pizza" && <PizzaListContainer pizzas={pizzas} />}

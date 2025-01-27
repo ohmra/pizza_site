@@ -22,11 +22,11 @@ export default function Authenticated({ header, children }) {
         }
     }, [flash]);
     return (
-        <div className="auth-div text-[8px] sm:text-[8px] md:text-[10px] lg:text-[12px] xl:text-[16px]">
+        <div className="auth-div">{/*text-[10px] sm:text-[12px] md:text-[14px] lg:text-[14px] xl:text-[16px]*/}
             <header>
                 <div className="navbar-container">
                     <NavBar>
-                        <NavContainer className="logo-container">
+                        <NavContainer className="w-[4em] sm:w-[10em]">
                             <NavItem href={ user.type === 'user' ? route('home') : route('dashboard')}>
                                 <img src="/images/Logo.png" alt="logo"/>
                             </NavItem>

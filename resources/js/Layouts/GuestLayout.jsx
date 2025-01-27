@@ -3,7 +3,7 @@ import authBg from '../../../public/images/auth-bg.jpg';
 
 export default function Guest({ children }) {
     return (
-        <div className="flex min-h-screen flex-col items-center pt-6 sm:justify-center sm:pt-0"
+        <div className="flex min-h-screen flex-col items-center pt-6 justify-center sm:pt-0"
              style={{ backgroundImage: `url(${authBg})`,
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'cover',

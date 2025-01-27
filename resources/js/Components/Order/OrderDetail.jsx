@@ -22,7 +22,7 @@ export default function OrderDetail({selectedOrder, fade}){
     }
     return (
         <div
-            className={`w-[25em] h-[36em] bg-white/75 rounded-md p-[2.5em]
+            className={`w-full sm:w-[25em] h-[36em] bg-white/75 rounded-md p-[2.5em]
                         flex flex-col
                         transition-opacity duration-300 ease-in-out ${fade ? "opacity-0" : "opacity-100"}`}>
             <div className={"text-center font-bold text-[2em]"}>Order detail</div>

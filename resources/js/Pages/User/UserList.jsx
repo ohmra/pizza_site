@@ -80,19 +80,19 @@ export default function UserList({users}) {
     });
 
     return (
-        <div className={"bg-white w-[44em] mt-4 h-[46em] sm:w-[56em] sm:h-[34em] p-10 overflow: auto"} ref={userListContainerRef}>
+        <div className={"bg-white w-full mt-4 md:[w-20em] xl:w-[58em] p-10 overflow: auto"} ref={userListContainerRef}>
             <button className={"w-[12em] mr-[1em] p-[0.3em] bg-green-300 mb-1 rounded-lg"} onClick={() => handleUserModalClick(null, "create")}>ADD A USER</button>
             <SearchBar search={search} setSearch={setSearch} setIndexPaginator={setIndexPaginator} />
-            <div className={`transition-opacity duration-300 ease-in-out ${animation ? 'opacity-0' : 'opacity-100'}`}>
-                <table className={`table-auto w-full border-collapse border border-gray-200 text-[0.9rem]`}>
+            <div className={`overflow-auto transition-opacity duration-300 ease-in-out ${animation ? 'opacity-0' : 'opacity-100'}`}>
+                <table className={`table-auto border-collapse border border-gray-200`}>
                     <thead className="bg-gray-200">
                     <tr>
                         <th className={"border text-left px-4 py-3"}>id</th>
                         <th className={"border text-left px-4 py-3"}>name</th>
                         <th className={"border text-left px-4 py-3"}>email</th>
                         <th className={"border text-left px-4 py-3"}>type</th>
-                        <th className={"border text-left px-4 py-3"}>created_at</th>
-                        <th className={"border text-left px-4 py-3"}>updated_at</th>
+                        <th className={"border text-left px-4 py-3 max-xl:hidden"}>created_at</th>
+                        <th className={"border text-left px-4 py-3 max-xl:hidden"}>updated_at</th>
                         <th className={"border text-left px-4 py-3"}></th>
                         <th className={"border text-left px-4 py-3"}></th>
                     </tr>
@@ -105,8 +105,8 @@ export default function UserList({users}) {
                                 <td className={"border text-left px-4 py-3"}>{user['name']}</td>
                                 <td className={"border text-left px-4 py-3"}>{user['email']}</td>
                                 <td className={"border text-left px-4 py-3"}>{user['type']}</td>
-                                <td className={"border text-left px-4 py-3"}>{user['created_at'] ? formatDate(user['created_at']) : "null"}</td>
-                                <td className={"border text-left px-4 py-3"}>{user['updated_at'] ? formatDate(user['updated_at']) : "null"}</td>
+                                <td className={"border text-left px-4 py-3 max-xl:hidden"}>{user['created_at'] ? formatDate(user['created_at']) : "null"}</td>
+                                <td className={"border text-left px-4 py-3 max-xl:hidden"}>{user['updated_at'] ? formatDate(user['updated_at']) : "null"}</td>
                                 <td className={"border text-left px-4 py-3"}><button onClick={() => handleUserModalClick(user, "edit")}
                                                                                 className="index-edit">Edit</button></td>
                                 <td className={"border text-left px-4 py-3"}>
@@ -123,7 +123,7 @@ export default function UserList({users}) {
                 </table>
 
                 <Paginator numberOfPage={numberOfPage} indexPaginator={indexPaginator}
-                           paginatorHandler={paginatorHandler} className={"mt-2"}/>
+                           paginatorHandler={paginatorHandler} className={"m-4"}/>
             </div>
 
             <AnimatePresence>
