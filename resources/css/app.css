@@ -422,8 +422,6 @@ main {
 }
 
 .pizza-form form {
-    width: 25em;
-    height: 30em;
     background-color: #fff;
     border-radius: var(--border-radius);
     display: flex;
@@ -531,7 +529,6 @@ main {
 
 /**********************USER FORM ************************/
 .user-form {
-    width: 30em;
     background-color: white;
     padding: 2em;
     border-radius: 1em;

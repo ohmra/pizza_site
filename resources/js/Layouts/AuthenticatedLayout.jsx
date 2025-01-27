@@ -24,7 +24,7 @@ export default function Authenticated({ header, children }) {
     return (
         <div className="auth-div">{/*text-[10px] sm:text-[12px] md:text-[14px] lg:text-[14px] xl:text-[16px]*/}
             <header>
-                <div className="navbar-container">
+                <div className="navbar-container text-[0.6em] sm:text-[1em]">
                     <NavBar>
                         <NavContainer className="w-[4em] sm:w-[10em]">
                             <NavItem href={ user.type === 'user' ? route('home') : route('dashboard')}>

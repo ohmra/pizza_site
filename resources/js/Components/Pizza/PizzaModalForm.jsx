@@ -33,7 +33,7 @@ export default function PizzaModalForm({action, pizza, handleModalClose}){
     return (
             <div className={`fixed inset-0 bg-blue-50/75 flex items-center justify-center`}>
                 <div className={"fixed inset-0 z-40"} onClick={() => handleModalClose()}></div>
-                <motion.div className="pizza-form z-50"
+                <motion.div className="pizza-form w-[18em] md:w-[25em] h-[30em] z-50"
                             initial={{opacity: 0, y: -150}}
                             animate={{opacity: 100, y: 0}}
                             exit={{opacity:0}}

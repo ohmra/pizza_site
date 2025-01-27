@@ -139,7 +139,7 @@ export default function UserList({users}) {
                                 exit={{opacity:0}}
                                 duration={100}
                             >
-                                <form onSubmit={submit} className="user-form relative">
+                                <form onSubmit={submit} className="user-form w-[18em] md:w-[30em] relative">
                                     <button type={"button"} className={"absolute right-5 top-3 text-2xl"} onClick={handleUserModalClose}><FontAwesomeIcon icon={faCircleXmark} /></button>
                                     <div className="input-wrapper">
                                         <label className="input-label" htmlFor="name">Name</label>

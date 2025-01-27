@@ -8,9 +8,9 @@ export default function Home({pizzas}){
         <>
         <Head title="Home" />
             <Authenticated>
-                <div className={`w-full h-full flex items-center flex-col overflow-x-hidden
-                                lg:flex-row sm:justify-around`}>
-                    <motion.aside className={"text-white w-[50%] text-[2em] sm:text-[2em] md:text-[3em] sm:w-[7em]"}
+                <div className={`w-full h-full flex items-center justify-end flex-col-reverse overflow-x-hidden
+                                lg:flex-row lg:justify-around`}>
+                    <motion.aside className={"text-white w-[75%] text-[2em] sm:text-[2em] md:text-[3em] sm:w-[7em]"}
                               initial={{opacity: 0, x: -150}}
                               animate={{opacity: 1, x: 0}}
                               transition={{duration: 1}}

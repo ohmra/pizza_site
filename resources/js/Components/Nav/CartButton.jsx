@@ -30,7 +30,7 @@ export default function CartButton() {
 
             {/* Toggle Dropdown */}
             <div ref={dropdownRef}
-                className={`cart-dropdown text-[1.2rem] z-40 transition-all duration-300 ease-in-out ${isDropdownVisible ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-6'}`}>
+                className={`cart-dropdown text-[1.2em] z-40 transition-all duration-300 ease-in-out ${isDropdownVisible ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-6'}`}>
 
                 {cart_length > 0 ? (
                     <ul>
