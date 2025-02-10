@@ -5,8 +5,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('pizzas', [PizzaController::class, 'index'])->name('pizzas')->middleware('auth');
 
 Route::middleware('is_admin')->group(function(){
-    Route::post('pizza/create', [PizzaController::class, 'store']);
+    Route::post('pizza/create', [PizzaController::class, 'store'])->name('pizza.create');
     Route::delete('pizza/delete/{id}', [PizzaController::class, 'destroy'])->name('pizza.delete');
-    Route::put('pizza/edit/{id}', [PizzaController::class, 'update']);
+    Route::put('pizza/edit/{id}', [PizzaController::class, 'update'])->name('pizza.edit');
 });
 
